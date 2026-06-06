@@ -1,26 +1,144 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #e8f1fb;
+  --foreground: #000000;
+  --primary: #1f316d;
+  --background-secondary: #ffffff;
+  --link: #0059ff;
+  --success: #22c55e;
+  --warning: #c4a035;
+  --disabled: #9ca3af;
+  --border: #e5e7eb;
+  --ring-track: #e8ecf4;
+  --ring-start: #e8f1fb;
+  --ring-end: #6b9fd4;
+  --metric-yellow: #fef9e7;
+  --metric-gray: #f3f4f6;
+  --metric-green: #ecfdf5;
+  --metric-blue: #e8f4fd;
+  --metric-orange: #fff7ed;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-background-secondary: var(--background-secondary);
+  --color-link: var(--link);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-disabled: var(--disabled);
+  --color-border: var(--border);
+  --color-ring-track: var(--ring-track);
+  --color-ring-start: var(--ring-start);
+  --color-ring-end: var(--ring-end);
+  --color-metric-yellow: var(--metric-yellow);
+  --color-metric-gray: var(--metric-gray);
+  --color-metric-green: var(--metric-green);
+  --color-metric-blue: var(--metric-blue);
+  --color-metric-orange: var(--metric-orange);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--ring-track);
+}
+
+.padd {
+  padding: 1.5vw;
+}
+.text20 {
+  font-size: 1.5vw;
+}
+.text12 {
+  font-size: 1vw;
+}
+.text10 {
+  font-size: 0.9vw;
+}
+.text8 {
+  font-size: 0.8vw;
+}
+
+@media (max-width: 1023px) {
+  html,
+  body {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .padd {
+    padding: 1rem;
+  }
+
+  .text20 {
+    font-size: 1.125rem;
+  }
+
+  .text12 {
+    font-size: 0.875rem;
+  }
+
+  .text10 {
+    font-size: 0.8125rem;
+  }
+
+  .text8 {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .padd {
+    padding: 0.875rem;
+  }
+
+  .text20 {
+    font-size: 1.25rem;
+  }
+
+  .text12 {
+    font-size: 0.9375rem;
+  }
+
+  .text10 {
+    font-size: 0.875rem;
+  }
+
+  .text8 {
+    font-size: 0.8125rem;
+  }
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background-image: linear-gradient(
+    90deg,
+    var(--metric-gray) 0%,
+    var(--ring-track) 45%,
+    var(--metric-blue) 55%,
+    var(--metric-gray) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.6s ease-in-out infinite;
 }
