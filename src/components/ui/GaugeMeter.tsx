@@ -18,7 +18,7 @@ const gaugeMeter = tv({
 
 export interface GaugeMeterProps {
     value: number
-    maxValue: number
+    maxValue: number 
     displayValue: string
     minLabel?: string
     maxLabel: string
