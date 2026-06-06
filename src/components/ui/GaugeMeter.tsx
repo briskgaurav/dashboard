@@ -22,7 +22,7 @@ export interface GaugeMeterProps {
     displayValue: string
     minLabel?: string
     maxLabel: string
-    size?: number
+    size?: number 
     strokeWidth?: number
     trackColor?: string
     filledColor?: string
